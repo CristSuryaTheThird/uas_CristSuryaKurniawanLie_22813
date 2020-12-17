@@ -1,0 +1,23 @@
+#map {
+  height: 100%;
+}
+.inputContainer {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputContainer ion-input {
+  border: solid 2px black;
+  max-height: 35px;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.inputContainer ion-button {
+  max-height: 35px;
+}

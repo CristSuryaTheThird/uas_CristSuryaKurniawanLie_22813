@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid >    
+     <ion-row  >    
+      <ion-col size="12" size-sm="10" style="display: flex; align-items: center; flex-direction: column;">
+        <ion-avatar  style="width: 120px; height: 120px">
+          <ion-img src='assets/noImage.png' ></ion-img>
+        </ion-avatar>
+        <p style="font-size: 25px; font-weight: bold;  margin-top: 10px; margin-bottom:5px;">{{firstName}} {{lastName}}</p>
+        <p style="font-size: 16px;margin-top: 5px; margin-bottom: 5px;">00000022813</p>
+        <ion-button (click)="logout()">Logout</ion-button>
+      </ion-col>
+      <ion-col size="12" size-sm="10" style="display: flex;  flex-direction: column;">
+        <p style="font-size: 20px; font-weight: bold; margin-bottom:0px;">My Feeds</p>
+        <ion-list>
+          <ion-item  *ngFor="let chk of myCheckIn">
+            <p ion-button ion-long-press [interval]="400" (longPressed)="deleting(chk.checkInId)" style="font-size: 14px; margin-top:0px; margin-bottom: 5px;">{{firstName}} {{lastName}} Checked-In at {{chk.location}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

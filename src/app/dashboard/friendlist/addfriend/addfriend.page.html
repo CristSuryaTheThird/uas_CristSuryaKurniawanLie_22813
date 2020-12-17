@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add friend</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard/tabs/friendlist"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <ion-item  [hidden]="true">
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text"  [(ngModel)]="userKey" name="userKey"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text"  [(ngModel)]="fname" name="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input type="text"  [(ngModel)]="lname" name="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Lokasi</ion-label>
+        <ion-input type="text"  [(ngModel)]="lokasi" name="lokasi"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Lat</ion-label>
+        <ion-input type="number"  [(ngModel)]="lat" name="latitude"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Long</ion-label>
+        <ion-input type="number" [(ngModel)]="long" name="longitude"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" color="primary" expand="block" [disabled]="!fname || !lname || !lokasi || !lat || !long">Simpan</ion-button>
+  </form>
+</ion-content>

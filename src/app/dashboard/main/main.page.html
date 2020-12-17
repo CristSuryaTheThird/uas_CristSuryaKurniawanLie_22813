@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>main</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-button color="danger" expand="full" (click)="showCurrentLoc()">Current Location</ion-button> -->
+
+  <div #map id="map">
+    
+  </div>
+  <div class="inputContainer " *ngIf="normalState">
+    <ion-button shape="round" color="primary" (click)="changeNormalState()" style="width:75%">Check-in Location</ion-button>
+    <ion-button shape="round" color="primary" (click)="centerLoc()"><ion-icon name="locate-outline" ></ion-icon></ion-button>
+  </div>
+  <div class="inputContainer " *ngIf="!normalState">
+    <ion-input type="text"  placeholder="Where am i?" class="mapInput" [(ngModel)]="myCheckIn"></ion-input>
+    <ion-button  color="primary" (click)="checkIn()">Check-in</ion-button>
+    <ion-button  color="primary" (click)="returnNormalState()">Cancel</ion-button>
+  </div>
+</ion-content>
